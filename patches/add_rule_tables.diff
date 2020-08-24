@@ -1,0 +1,107 @@
+diff --git a/interfaces/plume.ovsschema b/interfaces/plume.ovsschema
+index 36c9efa..b2d09cd 100644
+--- a/interfaces/plume.ovsschema
++++ b/interfaces/plume.ovsschema
+@@ -1,7 +1,7 @@
+ {
+   "name": "Open_vSwitch",
+-  "version": "7.11.171",
+-  "cksum": "498969954 170147",
++  "version": "7.11.172",
++  "cksum": "748042212 172264",
+   "tables": {
+     "AWLAN_Node": {
+       "columns": {
+@@ -7675,6 +7675,92 @@
+         }
+       },
+       "isRoot": true
++    },
++    "IOT_Rule_Config": {
++      "columns": {
++        "name": {
++          "type": {
++            "key": {
++              "type": "string"
++            }
++          }
++        },
++        "event": {
++          "type": {
++            "key": {
++              "type": "string"
++            }
++          }
++        },
++        "filter": {
++            "type": {
++                "key": "string",
++                "value": {
++                    "type": "string",
++                    "maxLength": 128
++                },
++                "min": 0,
++                "max": "unlimited"
++            }
++        },
++        "actions": {
++            "type": {
++                "key": "string",
++                "value": {
++                    "type": "string",
++                    "maxLength": 128
++                },
++                "min": 0,
++                "max": "unlimited"
++            }
++        },
++        "params": {
++            "type": {
++                "key": "string",
++                "value": {
++                    "type": "string",
++                    "maxLength": 128
++                },
++                "min": 0,
++                "max": "unlimited"
++            }
++        }
++      },
++      "isRoot": true
++    },
++    "IOT_Manager_Config": {
++        "columns": {
++            "handler": {
++                "type": {
++                    "key": {
++                        "type": "string",
++                        "minLength": 2,
++                        "maxLength": 64
++                    }
++                }
++            },
++            "plugin": {
++                "type": {
++                    "key": {
++                        "type": "string",
++                        "minLength": 0,
++                        "maxLength": 128
++                    }
++                }
++            },
++            "other_config": {
++                "type": {
++                    "key": "string",
++                    "value": {
++                        "type": "string",
++                        "maxLength": 128
++                    },
++                    "min": 0,
++                    "max": "unlimited"
++                }
++            }
++        },
++        "isRoot": true
+     }
+   }
+ }
